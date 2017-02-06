@@ -8,7 +8,12 @@ from browser import document as doc, window, alert
 DEFAULT = """from browser import window
 from javascript import JSConstructor
 
-game = JSConstructor(window.Phaser.Game)(800, 600, window.Phaser.AUTO, 'game')"""
+# Set up the environment to be friendly
+Phaser = window.Phaser
+Game = JSConstructor(window.Phaser.Game)
+
+game = Game(800, 600, Phaser.AUTO, 'game')
+"""
 
 # set height of container to 66% of screen
 _height = doc.documentElement.clientHeight

@@ -19,6 +19,11 @@
 from browser import document as doc, window
 from browser import html
 import editor
+from javascript import JSConstructor
+
+# Set up the environment to be friendly
+Phaser = window.Phaser
+Game = JSConstructor(window.Phaser.Game)
 
 def set_debug(ev):
     if ev.target.checked:
